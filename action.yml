@@ -1,0 +1,20 @@
+name: 'Protodist'
+description: 'Bundle and distribute protobuf packages'
+inputs:
+  branch:
+    description: 'git branch'
+    required: true
+  tag:
+    description: 'git tag'
+    required: true
+  proto_dir:
+    description: 'protobuf root directory'
+    required: false
+    default: ${{ github.workspace }}
+runs:
+  using: 'docker'
+  image: 'antegulin/protodist:0.0.4'
+  env:
+    PROTODIST_BRANCH: ${{inputs.branch}}
+    PROTODIST_TAG: ${{inputs.tag}}
+    PROTODIST_DIR: ${{inputs.proto_dir}}
