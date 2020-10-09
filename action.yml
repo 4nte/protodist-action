@@ -31,8 +31,8 @@ runs:
   image: 'docker://antegulin/protodist:v0.1.0-alpha-rc8'
   pre-entrypoint: 'pre-entrypoint.sh'
   env:
-    PROTODIST_BRANCH: ${{inputs.branch}}
-    PROTODIST_TAG: ${{inputs.tag}}
+    PROTODIST_GIT_BRANCH: ${{inputs.branch}}
+    PROTODIST_GIT_TAG: ${{inputs.tag}}
     PROTODIST_DIR: ${{inputs.proto_dir}}
     PROTODIST_GIT_USER: ${{inputs.git_user}}
     PROTODIST_GIT_ACCESS_TOKEN: ${{inputs.git_access_token}}
