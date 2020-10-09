@@ -1,10 +1,10 @@
 name: 'Protodist'
 description: 'Bundle and distribute protobuf packages'
 inputs:
-  branch:
+  git_branch:
     description: 'git branch'
     required: true
-  tag:
+  git_tag:
     description: 'git tag'
     required: false
   proto_dir:
@@ -31,8 +31,8 @@ runs:
   image: 'docker://antegulin/protodist:v0.1.0-alpha-rc10'
   pre-entrypoint: 'pre-entrypoint.sh'
   args:
-    - "--git_branch ${{inputs.branch}}"
-    - "--git_tag ${{inputs.tag}}"
+    - "--git_branch ${{inputs.git_branch}}"
+    - "--git_tag ${{inputs.git_tag}}"
     - "--proto_dir ${{inputs.proto_dir}}"
     - "--git_user ${{inputs.git_user}}"
     - "--git_access_token ${{inputs.git_access_token}}"
