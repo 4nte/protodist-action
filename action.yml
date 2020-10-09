@@ -34,5 +34,6 @@ runs:
     PROTODIST_BRANCH: ${{inputs.branch}}
     PROTODIST_TAG: ${{inputs.tag}}
     PROTODIST_DIR: ${{inputs.proto_dir}}
+    PROTODIST_GIT_USER: ${{inputs.git_user}}
     PROTODIST_GIT_ACCESS_TOKEN: ${{inputs.git_access_token}}
     PROTODIST_PROTO_IMPORT_PATH: ${{inputs.proto_import_path}}
