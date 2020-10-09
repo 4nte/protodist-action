@@ -6,16 +6,33 @@ inputs:
     required: true
   tag:
     description: 'git tag'
-    required: true
+    required: false
   proto_dir:
     description: 'protobuf root directory'
     required: false
     default: ${{ github.workspace }}
+  git_user:
+    description: 'git user'
+    required: false
+  git_access_token:
+    description: 'git access token'
+    required: true
+  git_organization:
+    description: 'git organization'
+    required: false
+  git_host:
+    description: 'git host'
+    required: true
+  proto_import_path:
+    description: 'import paths separated by a space char'
+    required: false
 runs:
-  using: 'docker'
-  image: 'docker://antegulin/protodist:0.0.4'
-  entrypoint: 'protodist'
+  using: docker
+  image: 'docker://antegulin/protodist:v0.1.0-alpha-rc6'
+  pre-entrypoint: 'pre-entrypoint.sh'
   env:
     PROTODIST_BRANCH: ${{inputs.branch}}
     PROTODIST_TAG: ${{inputs.tag}}
     PROTODIST_DIR: ${{inputs.proto_dir}}
+    PROTODIST_GIT_ACCESS_TOKEN: ${{inputs.git_access_token}}
+    PROTODIST_PROTO_IMPORT_PATH: ${{inputs.proto_import_path}}
