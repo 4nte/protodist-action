@@ -26,5 +26,11 @@ then
     export PROTODIST_GIT_TAG=$INPUT_GIT_TAG
 fi
 
+if [ -n "$INPUT_PROTO_DIR" ]
+then
+    export PROTODIST_PROTO_DIR=$INPUT_PROTO_DIR
+fi
+
+
 # Run protodist
 /protodist
