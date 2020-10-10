@@ -24,6 +24,10 @@ then
     export PROTODIST_GIT_TAG=$INPUTS_GIT_TAG
 fi
 
+printenv
+declare -p
+declare -xp
+
 
 echo "INPUTS_GIT_USER: $INPUTS_GIT_USER"
 echo "PROTODIST_GIT_USER: $ROTODIST_GIT_USER"
