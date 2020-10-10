@@ -25,6 +25,9 @@ then
 fi
 
 
+echo "INPUTS_GIT_USER: $INPUTS_GIT_USER"
+echo "PROTODIST_GIT_USER: $ROTODIST_GIT_USER"
+
 echo "running protodist"
 pwd
 ls
