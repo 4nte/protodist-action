@@ -23,3 +23,7 @@ if [ -z "$INPUTS_GIT_TAG" ]
 then
     export PROTODIST_GIT_TAG=$INPUTS_GIT_TAG
 fi
+
+
+echo "running protodist"
+protodist
