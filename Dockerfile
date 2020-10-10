@@ -1,4 +1,4 @@
-FROM antegulin/protodist:v0.1.0-alpha-rc13
+FROM antegulin/protodist:v0.1.0-alpha-rc14
 
 COPY entrypoint.sh /entrypoint.sh
 WORKDIR /
