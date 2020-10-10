@@ -29,7 +29,7 @@ inputs:
 runs:
   using: docker
   image: 'docker://antegulin/protodist:v0.1.0-alpha-rc11'
-  entrypoint: entrypoint.sh
+  entrypoint: "entrypoint.sh"
   env:
     PROTODIST_GIT_USER: ${{inputs.git_user}}
     PROTODIST_GIT_BRANCH: ${{inputs.git_branch}}
