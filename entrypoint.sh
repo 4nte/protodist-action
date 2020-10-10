@@ -28,4 +28,4 @@ fi
 echo "running protodist"
 pwd
 ls
-protodist
+/protodist
