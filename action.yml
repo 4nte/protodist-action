@@ -29,7 +29,8 @@ inputs:
 runs:
   using: docker
   image: 'docker://antegulin/protodist:v0.1.0-alpha-rc10'
-  pre-entrypoint: 'pre-entrypoint.sh'
+  env:
+    PROTODIST_GIT_USER: ${{inputs.git_user}}
   args:
     - "--git_branch ${{inputs.git_branch}}"
     - "--git_tag ${{inputs.git_tag}}"
