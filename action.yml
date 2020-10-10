@@ -28,7 +28,6 @@ inputs:
     required: false
 runs:
   using: docker
-#  image: 'docker://antegulin/protodist:v0.1.0-alpha-rc11'
   image: 'Dockerfile'
   env:
     PROTODIST_GIT_USER: ${{inputs.git_user}}
