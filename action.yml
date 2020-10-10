@@ -31,10 +31,21 @@ runs:
   image: 'docker://antegulin/protodist:v0.1.0-alpha-rc11'
   env:
     PROTODIST_GIT_USER: ${{inputs.git_user}}
-  args:
-    - "--git_branch ${{inputs.git_branch}}"
-    - "--git_tag ${{inputs.git_tag}}"
-    - "--proto_dir ${{inputs.proto_dir}}"
-    - "--git_user ${{inputs.git_user}}"
-    - "--git_access_token ${{inputs.git_access_token}}"
-    - "--proto_import_path ${{inputs.proto_import_path}}"
+    PROTODIST_GIT_BRANCH: ${{inputs.git_branch}}
+    PROTODIST_GIT_TAG: ${{inputs.git_tag}}
+    PROTODIST_PROTO_DIR: ${{inputs.proto_dir}}
+    PROTODIST_GIT_ACCESS_TOKEN: ${{inputs.git_access_token}}
+    PROTODIST_PROTO_IMPORT_PATH: ${{inputs.proto_import_path}}
+#      - "--git_branch ${{inputs.git_branch}}"
+#      - "--git_tag ${{inputs.git_tag}}"
+#      - "--proto_dir ${{inputs.proto_dir}}"
+#      - "--git_user ${{inputs.git_user}}"
+#      - "--git_access_token ${{inputs.git_access_token}}"
+#      - "--proto_import_path ${{inputs.proto_import_path}}"
+#  args:
+#    - "--git_branch ${{inputs.git_branch}}"
+#    - "--git_tag ${{inputs.git_tag}}"
+#    - "--proto_dir ${{inputs.proto_dir}}"
+#    - "--git_user ${{inputs.git_user}}"
+#    - "--git_access_token ${{inputs.git_access_token}}"
+#    - "--proto_import_path ${{inputs.proto_import_path}}"
