@@ -1,9 +1,9 @@
 #!/bin/sh
 
 # Bind inputs to environment
-if [ -n "$INPUT_GIT_USER" ]
+if [ -n "$INPUT_GIT_OWNER" ]
 then
-    export PROTODIST_GIT_USER=$INPUT_GIT_USER
+    export PROTODIST_GIT_OWNER=$INPUT_GIT_OWNER
 fi
 
 if [ -n "$INPUT_GIT_BRANCH" ]
@@ -11,14 +11,9 @@ then
     export PROTODIST_GIT_BRANCH=$INPUT_GIT_BRANCH
 fi
 
-if [ -n "$INPUT_PROTO_IMPORT_PATH" ]
+if [ -n "$INPUT_GIT_HOST" ]
 then
-    export PROTODIST_PROTO_IMPORT_PATH=$INPUT_PROTO_IMPORT_PATH
-fi
-
-if [ -n "$INPUT_GIT_ACCESS_TOKEN" ]
-then
-    export PROTODIST_GIT_ACCESS_TOKEN=$INPUT_GIT_ACCESS_TOKEN
+    export PROTODIST_GIT_HOST=$INPUT_GIT_HOST
 fi
 
 if [ -n "$INPUT_GIT_TAG" ]
@@ -26,9 +21,9 @@ then
     export PROTODIST_GIT_TAG=$INPUT_GIT_TAG
 fi
 
-if [ -n "$INPUT_PROTO_DIR" ]
+if [ -n "$INPUT_PROTO_OUT_DIR" ]
 then
-    export PROTODIST_PROTO_DIR=$INPUT_PROTO_DIR
+    export PROTODIST_PROTO_OUT_DIR=$INPUT_PROTO_OUT_DIR
 fi
 
 

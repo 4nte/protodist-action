@@ -1,41 +1,31 @@
 name: 'Protodist'
 description: 'Bundle and distribute protobuf packages'
 inputs:
+  git_host:
+    description: 'git host'
+    required: false
+    default: "github.com"
   git_branch:
     description: 'git branch'
     required: true
   git_tag:
     description: 'git tag'
     required: false
-  proto_dir:
-    description: 'protobuf root directory'
-    required: false
-    default: ${{ github.workspace }}
-  git_user:
-    description: 'git user'
-    required: false
-  git_access_token:
-    description: 'git access token'
+  proto_out_dir:
+    description: 'protobuf output directory'
     required: true
-  git_organization:
-    description: 'git organization'
-    required: false
-  git_host:
-    description: 'git host'
-    required: true
-  proto_import_path:
-    description: 'import paths separated by a space char'
+  git_owner:
+    description: 'git owner'
     required: false
 runs:
   using: docker
   image: 'Dockerfile'
   env:
-    PROTODIST_GIT_USER: ${{inputs.git_user}}
+    PROTODIST_GIT_OWNER: ${{inputs.git_owner}}
+    PROTODIST_GIT_HOST: ${{inputs.git_host}}
     PROTODIST_GIT_BRANCH: ${{inputs.git_branch}}
     PROTODIST_GIT_TAG: ${{inputs.git_tag}}
-    PROTODIST_PROTO_DIR: ${{inputs.proto_dir}}
-    PROTODIST_GIT_ACCESS_TOKEN: ${{inputs.git_access_token}}
-    PROTODIST_PROTO_IMPORT_PATH: ${{inputs.proto_import_path}}
+    PROTODIST_PROTO_OUT_DIR: ${{inputs.proto_out_dir}}
 #      - "--git_branch ${{inputs.git_branch}}"
 #      - "--git_tag ${{inputs.git_tag}}"
 #      - "--proto_dir ${{inputs.proto_dir}}"
